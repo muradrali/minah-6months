@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Happy 6 Months, Minah 💕</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Optional Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #fff7fb;
+      --card: #ffffff;
+      --accent: #ff9fb6;
+      --accent-soft: #ffe0ea;
+      --text-main: #2b1a27;
+      --text-soft: #7b6175;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at top, #ffe7f1 0, #fff7fb 40%, #ffffff 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px 18px 40px;
+    }
+
+    header {
+      text-align: center;
+      padding: 32px 12px 24px;
+      position: relative;
+    }
+
+    header::before,
+    header::after {
+      content: "❤";
+      position: absolute;
+      font-size: 32px;
+      opacity: 0.28;
+    }
+
+    header::before {
+      left: 10%;
+      top: 10px;
+    }
+
+    header::after {
+      right: 10%;
+      bottom: 10px;
+    }
+
+    .tagline {
+      font-size: 0.9rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+      margin-bottom: 6px;
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.2rem, 4vw, 2.8rem);
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-soft);
+      max-width: 520px;
+      margin: 0.25rem auto 0;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      background: var(--accent-soft);
+      color: var(--text-soft);
+      margin-top: 12px;
+    }
+
+    .pill span {
+      font-size: 1rem;
+    }
+
+    section {
+      margin-top: 28px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 18px;
+      padding: 20px 18px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+      border: 1px solid rgba(255, 159, 182, 0.2);
+    }
+
+    .card + .card {
+      margin-top: 16px;
+    }
+
+    h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    h2 span.icon {
+      font-size: 1.2rem;
+    }
+
+    .section-note {
+      font-size: 0.85rem;
+      color: var(--text-soft);
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style: none;
+      margin-top: 4px;
+    }
+
+    li {
+      margin-bottom: 8px;
+      padding-left: 20px;
+      position: relative;
+      font-size: 0.95rem;
+    }
+
+    li::before {
+      content: "✧";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--accent);
+      font-size: 0.9rem;
+    }
+
+    .timeline {
+      border-left: 2px solid var(--accent-soft);
+      padding-left: 14px;
+      margin-top: 8px;
+    }
+
+    .timeline-item {
+      margin-bottom: 14px;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      position: absolute;
+      left: -20px;
+      top: 4px;
+    }
+
+    .timeline-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-soft);
+    }
+
+    .timeline-title {
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    .timeline-text {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      margin-top: 2px;
+    }
+
+    .letter {
+      font-size: 0.97rem;
+      color: var(--text-main);
+      white-space: pre-line;
+    }
+
+    .signature {
+      margin-top: 12px;
+      font-weight: 600;
+    }
+
+    .bucket-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .bucket-item {
+      background: var(--accent-soft);
+      border-radius: 12px;
+      padding: 10px 12px;
+      font-size: 0.9rem;
+    }
+
+    .bucket-item strong {
+      display: block;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+      color: var(--text-soft);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .photo-placeholder {
+      border-radius: 14px;
+      border: 1px dashed rgba(123, 97, 117, 0.5);
+      padding: 26px 10px;
+      font-size: 0.85rem;
+      text-align: center;
+      color: var(--text-soft);
+      background: rgba(255, 224, 234, 0.25);
+    }
+
+    .photo-placeholder span {
+      display: block;
+      font-size: 1.3rem;
+      margin-bottom: 4px;
+    }
+
+    .surprise-wrapper {
+      text-align: center;
+      margin-top: 12px;
+    }
+
+    button.surprise-btn {
+      border: none;
+      border-radius: 999px;
+      padding: 10px 20px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      background: linear-gradient(135deg, #ff9fb6, #ffc2d2);
+      color: #401828;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 8px 18px rgba(255, 159, 182, 0.4);
+      transition: transform 0.12s ease, box-shadow 0.12s ease;
+    }
+
+    button.surprise-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 24px rgba(255, 159, 182, 0.5);
+    }
+
+    .surprise-text {
+      margin-top: 12px;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      display: none;
+      animation: fadeIn 0.5s ease-out forwards;
+      white-space: pre-line;
+    }
+
+    footer {
+      margin-top: 24px;
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--text-soft);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (min-width: 768px) {
+      .page {
+        padding: 32px 0 44px;
+      }
+
+      .card {
+        padding: 22px 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="tagline">Six Months With You</div>
+      <h1>Happy 6 Months, Minah 💗</h1>
+      <p class="subtitle">
+        I am sorry that I am giving you this so late. I made this little digital love letter just for you - something special for the most perfect girl in the world, my dearest, hunny bunny.
+      </p>
+      <div class="pill">
+        <span>♡</span> 180 days of us (plus a few more), and we’re just getting started.
+      </div>
+    </header>
+
+    <!-- WHY I LOVE YOU -->
+    <section id="why">
+      <div class="card">
+        <h2><span class="icon">🌸</span>Why I love you</h2>
+        <p class="section-note">Just a small handful of reasons you mean so much to me - ps. there’s a million more.</p>
+        <ul>
+          <li>Your perfect smile and laugh makes everything feel lighter, even on the heavy days.</li>
+          <li>You care so deeply for the people you love, and I feel lucky that I am one of those you love the most.</li>
+          <li>Your voice is the best sound I have heard in my life, I could listen to it all day.</li>
+          <li>The way you listen and understand me makes me feel safe in a way I’ve never known before.</li>
+          <li>You’re beautiful in every single way - looks, heart, mind, everything.</li>
+          <li>With you, even doing nothing, and not even seeing each other, somehow feels like the best part of my day.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section id="timeline">
+      <div class="card">
+        <h2><span class="icon">🗓️</span>Our first 6 "official" months together</h2>
+        <p class="section-note">
+          Little milestones that made these months feel special (<b>*spoiler*</b> - it's all to do with you).
+        </p>
+        <div class="timeline">
+  <div class="timeline-item">
+    <div class="timeline-label">June</div>
+    <div class="timeline-title">Making it official</div>
+    <div class="timeline-text">
+      The late night chats, the butterflies, the gym sessions and still wanting to talk to you every second again the next day.
+    </div>
+    <!-- PHOTO FOR MONTH 1 -->
+  <img src="june.jpg" alt="Month 1 memory"
+       style="width:100%; max-width:260px; margin-top:8px; border-radius:10px; display:block;">
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-label">July</div>
+    <div class="timeline-title">Oxford Fun</div>
+    <div class="timeline-text">
+      Getting more comfortable, more jokes, more teasing, more closeness - and realising how easy it feels to be myself with you and realising I want to marry you sooner.
+    </div>
+    <!-- PHOTO FOR MONTH 1 -->
+  <img src="july.JPG" alt="Month 1 memory"
+       style="width:100%; max-width:260px; margin-top:8px; border-radius:10px; display:block;">
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-label">August</div>
+    <div class="timeline-title">Summer Luvin</div>
+    <div class="timeline-text">
+      Going out on dates and adventures everywhere, just me and my Minah against the world.
+    </div>
+    <!-- PHOTO FOR MONTH 1 -->
+  <img src="august.JPG" alt="Month 1 memory"
+       style="width:100%; max-width:260px; margin-top:8px; border-radius:10px; display:block;">
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-label">September</div>
+    <div class="timeline-title">Dates + Penguins</div>
+    <div class="timeline-text">
+      Seeing you everyday, 10 minutes down the road, seeeing penguins and your cute face.
+    </div>
+    <!-- PHOTO FOR MONTH 1 -->
+  <img src="september.JPG" alt="Month 1 memory"
+       style="width:100%; max-width:260px; margin-top:8px; border-radius:10px; display:block;">
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-label">October</div>
+    <div class="timeline-title">My Pumpkins Birthday</div>
+    <div class="timeline-text">
+      My boo's wicked birthday in London paired with boo baskets - just me and you in our own small world.
+    </div>
+    <!-- PHOTO FOR MONTH 1 -->
+  <img src="october.JPG" alt="Month 1 memory"
+       style="width:100%; max-width:260px; margin-top:8px; border-radius:10px; display:block;">
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-label">November</div>
+    <div class="timeline-title">Sneaky Weekends</div>
+    <div class="timeline-text">
+      Ups, downs, misunderstandings, working through things, choosing to stay and fix instead of run - and realising that’s what actually matters.
+    </div>
+    <!-- PHOTO FOR MONTH 1 -->
+  <img src="november.JPG" alt="Month 1 memory"
+       style="width:100%; max-width:260px; margin-top:8px; border-radius:10px; display:block;">
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-label">December</div>
+    <div class="timeline-title">Right now</div>
+    <div class="timeline-text">
+      Six months in. Still learning each other. Still messing up sometimes. Still choosing each other anyway. And I wouldn’t swap you for anyone.
+            </div>
+            <!-- PHOTO FOR MONTH 1 -->
+  <img src="december.jpg" alt="Month 1 memory"
+       style="width:100%; max-width:260px; margin-top:8px; border-radius:10px; display:block;">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOVE LETTER -->
+    <section id="letter">
+      <div class="card">
+        <h2><span class="icon">💌</span>A little letter for you</h2>
+        <p class="letter">
+My Dearest, Minah,
+
+I know this is “just” six months, but to me it’s been so much more than a number. 
+It’s six months of you turning ordinary days into something I look forward to. 
+
+You’ve seen me in my good moments and my messy ones, and somehow you still choose to stay. 
+You make me feel understood, wanted, and loved in a way I don’t take for granted.
+
+Thank you for your patience, your softness, your honesty, and your heart.
+Thank you for the late night conversations, the reassurance when I overthink,
+and the way you always try with me.
+
+I don’t know exactly what the future looks like, but I know I want you in it.
+And I’m going to keep showing up, keep choosing you, and keep trying to be someone
+you’re proud to be with.
+
+Happy 6 months, my love.
+        </p>
+        <div class="signature">Forever and always,<br />Your Murad 🩷</div>
+      </div>
+    </section>
+
+    <!-- FUTURE PLANS -->
+    <section id="future">
+      <div class="card">
+        <h2><span class="icon">🌙</span>Things I can’t wait to do with you</h2>
+        <p class="section-note">
+          A small start to our list. We can keep adding to this as we go.
+        </p>
+        <div class="bucket-list">
+          <div class="bucket-item">
+            <strong>Weekend away</strong>
+            Just you and me, no stress, no distractions - our own little escape from everything, our own little world.
+          </div>
+          <div class="bucket-item">
+            <strong>Movie & snacks night</strong>
+            A proper cosy night: blankets, your favourite snacks, and way too many films to choose from (and cuddles and massages of course).
+          </div>
+          <div class="bucket-item">
+            <strong>Photo day</strong>
+            A day where we just dress nice, go somewhere pretty, and take photos we’ll look back on years from now.
+          </div>
+          <div class="bucket-item">
+            <strong>Future “us” tradition</strong>
+            Something only we do - every month or every year - so there’s always one more thing to look forward to together.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY PLACEHOLDERS -->
+    <section id="gallery">
+  <div class="card">
+    <h2><span class="icon">📸</span>Our little gallery</h2>
+    <p class="section-note">
+      A few memories (out of the countless others) to start us off.
+    </p>
+
+    <div class="gallery-grid">
+
+      <!-- PHOTO 1 -->
+      <div class="photo-placeholder">
+        <img src="fave.JPG" alt="Photo 1"
+             style="width:100%; border-radius:12px; display:block; margin-bottom:6px;">
+        One of my favourite photos of us 💕
+      </div>
+
+      <!-- PHOTO 2 -->
+      <div class="photo-placeholder">
+        <img src="funny.jpg" alt="Photo 2"
+             style="width:100%; border-radius:12px; display:block; margin-bottom:6px;">
+        A silly or funny photo that always makes me smile 😆
+      </div>
+
+      <!-- PHOTO 3 -->
+      <div class="photo-placeholder">
+        <img src="home.JPG" alt="Photo 3"
+             style="width:100%; border-radius:12px; display:block; margin-bottom:6px;">
+        A soft, cute moment of us — something that feels like “home” 🌙
+      </div>
+
+      <!-- PHOTO 4 -->
+      <div class="photo-placeholder">
+        <img src="memory.JPG" alt="Photo 4"
+             style="width:100%; border-radius:12px; display:block; margin-bottom:6px;">
+        A memory I never want to forget ✨
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    <!-- SURPRISE -->
+    <section id="surprise">
+      <div class="card">
+        <h2><span class="icon">🎁</span>Click for a little surprise</h2>
+        <p class="section-note">
+          (Because you deserve at least one extra cute thing.)
+        </p>
+        <div class="surprise-wrapper">
+          <button class="surprise-btn" onclick="toggleSurprise()">
+            💖 Click me
+          </button>
+          <div id="surprise-text" class="surprise-text">
+Minah,
+
+If you ever feel insecure, or start doubting yourself, or us, or how much you matter – I want you to remember this:
+
+You are enough. You’ve always been enough.
+You are not “too much”, not “a problem”, and definitely not hard to love.
+You are worth effort, patience, softness and real love --accent and I want to keep proving that to you.
+
+Even when we argue, even when things feel heavy, even when I don’t communicate perfectly,
+I still choose you. I still want you. I still care about you.
+
+When everything feels a bit too loud, come back to this:
+I am genuinely grateful it’s you I get to call mine.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      Made for Minah, for our 6 months together. ♡
+    </footer>
+  </div>
+
+  <script>
+    function toggleSurprise() {
+      const el = document.getElementById("surprise-text");
+      if (el.style.display === "block") {
+        el.style.display = "none";
+      } else {
+        el.style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
